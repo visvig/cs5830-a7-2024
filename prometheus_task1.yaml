@@ -1,0 +1,36 @@
+# my global config
+global:
+  scrape_interval: 15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          # Uncomment and modify if Alertmanager is configured
+          # - "alertmanager:9093"
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  # Uncomment and list any rule files
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  # Add a job to scrape metrics from Node Exporter
+  - job_name: "node_exporter"
+    static_configs:
+      - targets: ["localhost:9100"]
+
+  # Add this job to scrape metrics from FastAPI application
+  - job_name: "fastapi"
+    scrape_interval: 5s # Scrape more frequently than the default
+    static_configs:
+      - targets: ["localhost:8000"]  # FastAPI exposes metrics at this port
