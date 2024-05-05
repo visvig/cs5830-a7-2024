@@ -19,12 +19,15 @@ Ensure you have Docker and Docker Compose installed on your machine. The applica
 ## Installation
 
 1. **Clone the Repository**
+
 git clone https://github.com/visvig/cs5830-a7-2024
 
 2. **Build the Docker Image**
+
 docker build -t fastapi-mnist-app .
 
 3. **Run the Docker Container**
+
 docker run -p 8000:8000 --name fastapi_app_instance_tf_7 -v /Users/vishalvignesh/codes/cs5830-a7-2024/mnist_model.h5:/app/mnist_model.h5 fastapi-app
 
 (or)
@@ -38,6 +41,7 @@ Run docker run -p 8001:8000 --cpus="1.0" --name fastapi_app_instance_9 -v /Users
 remember to replace /Users/vishalvignesh/codes/cs5830-a7-2024/mnist_model.h5 with your local model path
 
 5. **Monitoring Setup**
+   
 - Start Prometheus and Grafana locally to monitor the Docker containers:
   ```
   # Start Prometheus, use prometheus_task1.yaml for task 1, prometheus_task2_docker.yaml for tast 2
