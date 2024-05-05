@@ -78,6 +78,7 @@ Metrics include API usage, performance metrics (processing time per input charac
 
 ## Additional Information
 
-For a detailed discussion of the project setup and performance metrics, please refer to `ME20B204_A7_Report.pdf` in the repository. All the code, configurations, and documentation are maintained on GitHub with comprehensive README and inline comments.
+For a detailed discussion of the project setup and performance metrics, please refer to `ME20B204_A7_Report.pdf` in the repository. 
+Also, find the steps involved and Graphana dashboard screenshots in the same.
 
 ---
